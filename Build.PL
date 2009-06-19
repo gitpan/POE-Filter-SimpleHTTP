@@ -1,32 +1,28 @@
+
 use strict;
 use warnings;
+
 use Module::Build;
 
-my $builder = Module::Build->new(
-    module_name         => 'POE::Filter::SimpleHTTP',
-    license             => 'gpl',
-    dist_author         => 'Nicholas Perez <nperez@cpan.org>',
-    dist_version_from   => 'lib/POE/Filter/SimpleHTTP.pm',
-    dist_abstract       => 'A simple client/server HTTP filter for POE',
-    create_readme       => 1,
-    build_requires      => 
-    {
-        'Test::More'        => 0,
-        'Moose'             => 0.75,
-        'Regexp::Common'    => 2.122,
-        'LWP'               => 5.822,
-        'URI'               => 1.37,
-        'Compress::Zlib'    => 2.012,
-        'UNIVERSAL::isa'    => 1.01,
-    },
-    add_to_cleanup      => [ 'POE-Filter-SimpleHTTP-*' ],
-    meta_merge          => 
-    {
-        resources       => 
-        {
-            repository => 'http://github.com/nperez/pfsh/tree/master'
-        }
-    }
+my $build = Module::Build->new(
+  module_name   => 'POE::Filter::SimpleHTTP',
+  license       => 'gpl',
+  dist_abstract => "A\ simple\ filter\ for\ client\ and\ server\ HTTP\ contexts",
+  dist_name     => "POE\-Filter\-SimpleHTTP",
+  dist_author   => [
+"Nicholas\ Perez\ \<nperez\@cpan\.org\>",
+  ],
+  requires      => {
+    "Compress::Zlib" => '2.012',
+    "URI" => '1.37',
+    "perl" => '5.10.0',
+    "Test::More" => '0',
+    "Regexp::Common" => '2.122',
+    "UNIVERSAL::isa" => '1.01',
+    "LWP" => '5.822',
+    "Moose" => '0.79',
+  },
+  script_files => [ qw() ],
 );
 
-$builder->create_build_script();
+$build->create_build_script;

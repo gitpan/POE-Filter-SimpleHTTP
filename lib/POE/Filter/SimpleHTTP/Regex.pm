@@ -1,12 +1,12 @@
 package POE::Filter::SimpleHTTP::Regex;
+our $VERSION = '0.091700';
+
 
 use warnings;
 use strict;
 
 use bytes;
 use Regexp::Common('URI');
-
-our $VERSION = '0.01';
 
 sub quote_it
 {

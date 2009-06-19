@@ -1,11 +1,12 @@
-Build.PL
-ChangeLog
+Changes
+LICENSE
 MANIFEST
-META.yml # Will be created by "make dist"
+META.yml
 README
+dist.ini
 lib/POE/Filter/SimpleHTTP.pm
-lib/POE/Filter/SimpleHTTP/Regex.pm
 lib/POE/Filter/SimpleHTTP/Error.pm
+lib/POE/Filter/SimpleHTTP/Regex.pm
 t/00-load.t
 t/01-basic.t
 t/02-put.t

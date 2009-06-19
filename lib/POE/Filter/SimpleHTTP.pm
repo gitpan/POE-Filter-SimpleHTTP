@@ -1,4 +1,6 @@
 package POE::Filter::SimpleHTTP;
+our $VERSION = '0.091700';
+
 use 5.010;
 use Moose;
 extends('Exporter', 'Moose::Object');
@@ -20,7 +22,6 @@ use UNIVERSAL::isa;
 
 use bytes;
 
-our $VERSION = '0.01';
 our @EXPORT = qw/PFSH_CLIENT PFSH_SERVER/;
 our $DEBUG = 0;
 
@@ -180,6 +181,12 @@ has 'method' =>
     default => 'GET',
     lazy => 1
 );
+
+sub clone()
+{
+    my ($self, %params) = @_;
+    return $self->meta->clone_object($self, %params);
+}
 
 sub isa()
 {
@@ -631,6 +638,10 @@ $DB::single=1;
 =head1 NAME
 
 POE::Filter::SimpleHTTP - A simple client/server suitable HTTP filter
+
+=head1 VERSION
+
+version 0.091700
 
 =head1 SYNOPSIS
 
