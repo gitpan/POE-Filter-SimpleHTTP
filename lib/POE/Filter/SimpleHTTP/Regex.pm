@@ -1,5 +1,5 @@
 package POE::Filter::SimpleHTTP::Regex;
-our $VERSION = '0.091700';
+our $VERSION = '0.091710';
 
 
 use warnings;

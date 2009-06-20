@@ -1,5 +1,5 @@
 package POE::Filter::SimpleHTTP::Error;
-our $VERSION = '0.091700';
+our $VERSION = '0.091710';
 
 use Moose;
 use Moose::Util::TypeConstraints;
@@ -48,7 +48,7 @@ POE::Filter::SimpleHTTP::Error - An error object for SimpleHTTP
 
 =head1 VERSION
 
-version 0.091700
+version 0.091710
 
 =head1 SYNOPSIS
 

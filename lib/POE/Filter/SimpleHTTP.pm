@@ -1,5 +1,5 @@
 package POE::Filter::SimpleHTTP;
-our $VERSION = '0.091700';
+our $VERSION = '0.091710';
 
 use 5.010;
 use Moose;
@@ -279,16 +279,13 @@ sub get_one()
 
 			} else {
 				
-				if(index($buffer, "\x0D\x0A") == -1)
-				{
-					push(@{$self->content}, $buffer);
-				
-				} else {
-
-					push(@{$self->content}, $self->get_chunk(\$buffer));
-				}
-
+                push(@{$self->content}, $self->get_chunk(\$buffer));
 			}
+
+            if(!@{$self->raw} && !length($buffer))
+            {
+                $self->state(+CONTENT_COMPLETE);
+            }
 
 		} else {
             
@@ -641,7 +638,7 @@ POE::Filter::SimpleHTTP - A simple client/server suitable HTTP filter
 
 =head1 VERSION
 
-version 0.091700
+version 0.091710
 
 =head1 SYNOPSIS
 
